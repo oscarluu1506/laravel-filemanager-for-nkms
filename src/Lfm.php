@@ -291,94 +291,94 @@ class Lfm
         Route::group(compact('middleware', 'as', 'namespace'), function () {
 
             // display main layout
-            Route::get('/', [
+            Route::get('/admin/', [
                 'uses' => 'LfmController@show',
                 'as' => 'show',
             ]);
 
             // display integration error messages
-            Route::get('/errors', [
+            Route::get('/admin/errors', [
                 'uses' => 'LfmController@getErrors',
                 'as' => 'getErrors',
             ]);
 
             // upload
-            Route::any('/upload', [
+            Route::any('/admin/upload', [
                 'uses' => 'UploadController@upload',
                 'as' => 'upload',
             ]);
 
             // list images & files
-            Route::get('/jsonitems', [
+            Route::get('/admin/jsonitems', [
                 'uses' => 'ItemsController@getItems',
                 'as' => 'getItems',
             ]);
 
-            Route::get('/move', [
+            Route::get('/admin/move', [
                 'uses' => 'ItemsController@move',
                 'as' => 'move',
             ]);
 
-            Route::get('/domove', [
+            Route::get('/admin/domove', [
                 'uses' => 'ItemsController@domove',
                 'as' => 'domove'
             ]);
 
             // folders
-            Route::get('/newfolder', [
+            Route::get('/admin/newfolder', [
                 'uses' => 'FolderController@getAddfolder',
                 'as' => 'getAddfolder',
             ]);
 
             // list folders
-            Route::get('/folders', [
+            Route::get('/admin/folders', [
                 'uses' => 'FolderController@getFolders',
                 'as' => 'getFolders',
             ]);
 
             // crop
-            Route::get('/crop', [
+            Route::get('/admin/crop', [
                 'uses' => 'CropController@getCrop',
                 'as' => 'getCrop',
             ]);
-            Route::get('/cropimage', [
+            Route::get('/admin/cropimage', [
                 'uses' => 'CropController@getCropimage',
                 'as' => 'getCropimage',
             ]);
-            Route::get('/cropnewimage', [
+            Route::get('/admin/cropnewimage', [
                 'uses' => 'CropController@getNewCropimage',
                 'as' => 'getCropnewimage',
             ]);
 
             // rename
-            Route::get('/rename', [
+            Route::get('/admin/rename', [
                 'uses' => 'RenameController@getRename',
                 'as' => 'getRename',
             ]);
 
             // scale/resize
-            Route::get('/resize', [
+            Route::get('/admin/resize', [
                 'uses' => 'ResizeController@getResize',
                 'as' => 'getResize',
             ]);
-            Route::get('/doresize', [
+            Route::get('/admin/doresize', [
                 'uses' => 'ResizeController@performResize',
                 'as' => 'performResize',
             ]);
 
             // download
-            Route::get('/download', [
+            Route::get('/admin/download', [
                 'uses' => 'DownloadController@getDownload',
                 'as' => 'getDownload',
             ]);
 
             // delete
-            Route::get('/delete', [
+            Route::get('/admin/delete', [
                 'uses' => 'DeleteController@getDelete',
                 'as' => 'getDelete',
             ]);
 
-            Route::get('/demo', 'DemoController@index');
+            Route::get('/admin/demo', 'DemoController@index');
         });
     }
 }
